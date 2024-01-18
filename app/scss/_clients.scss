@@ -1,0 +1,93 @@
+.clients {
+
+  &--padding {
+    padding-top: 80px;
+  }
+  // .clients__title
+  &__container {
+    @include vieport-xxl {
+      max-width: 1660px;
+      margin: 0 auto;
+    }
+  }
+  &__title {
+    color: $main-color;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  // .clients__list
+
+  &__list {
+    @include vieport-xxl {
+      border-radius: $radius-m;
+      overflow: hidden;
+    }
+
+    li:first-child {
+      background: #1c4280;
+    }
+    li:nth-child(2) {
+      background: #143646;
+    }
+    li:nth-child(3) {
+      background: #f48b30;
+    }
+    li:nth-child(4) {
+      background: #9e4dc3;
+    }
+    li:nth-child(5) {
+      background: #fd9339;
+    }
+    li:nth-child(6) {
+      background: #e2e2e4;
+    }
+    li:nth-child(7) {
+      background: #c71c36;
+    }
+    li:nth-child(8) {
+      background: #dcf3f9;
+    }
+    li:nth-child(9) {
+      background: #eaeaea;
+    }
+    li:nth-child(10) {
+      background: #282240;
+    }
+    li:nth-child(11) {
+      background: #1d4568;
+    }
+    li:nth-child(12) {
+      background: black;
+    }
+
+    @include vieport-md {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  // .clients__item
+
+  &__item {
+    height: 120px;
+    @include flex-center;
+    @include vieport-md {
+      flex: 1 1 33.33%;
+    }
+    @include vieport-lg {
+      flex: 1 1 25%;
+    }
+  }
+
+  &__item-block {
+    display: none;
+    @include vieport-md {
+      display: flex;
+    }
+  }
+}

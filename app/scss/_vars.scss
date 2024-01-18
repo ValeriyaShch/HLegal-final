@@ -1,0 +1,103 @@
+$main-color: #323264;
+$alt-color: #46466e;
+$soft-color: #686887;
+$accent-color: #f0145a;
+$active-regular: #24a3ff;
+$active-hover: #0085ff;
+$active-active: #006ccf;
+$bg-color: #f5f5fa;
+$bg-alt-color: #ededf7;
+$text-color: #b3b3ba;
+$basic-white: #ffffff;
+$separator-color: #e6e6f0;
+$gradient-color: linear-gradient(129deg, #323264 0%, #323264 74%, #a54b5f 100%);
+$gradient-soft: linear-gradient(42deg, #323264 14%, #323264 51%, #7a425e 88%);
+$gradient-red: linear-gradient(323deg, #f0145a 7%, #693264 70%);
+$gradient-supersoft: linear-gradient(
+  229deg,
+  #323264 12%,
+  #323264 57%,
+  #643e72 87%
+);
+$gradient-red-text: linear-gradient(90deg, #f0145a 0.84%, #ef8080 99.96%);
+
+$radius-s: 8px;
+$radius-m: 12px;
+$radius-rounded: 50%;
+
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1440px;
+$breakpoint-xxl: 1920px;
+
+@mixin vieport-md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+@mixin vieport-lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+@mixin vieport-xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+@mixin vieport-xxl {
+  @media (min-width: $breakpoint-xxl) {
+    @content;
+  }
+}
+@mixin main-gradient-text($bg-color: $gradient-red-text) {
+  background: $bg-color;
+  color: transparent;
+  background-clip: text;
+}
+@mixin title($color: $basic-white) {
+  font-size: 38px;
+  font-weight: 700;
+  color: $color;
+}
+@mixin subtitle($color: $basic-white) {
+  font-size: 30px;
+  font-weight: 700;
+  color: $color;
+
+  @include vieport-md {
+    font-size: 38px;
+  }
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin base-link($color: $active-regular) {
+  color: $color;
+  text-decoration: none;
+  transition: 0.2s;
+
+  &:hover {
+    color: $accent-color;
+  }
+  &:hover::before {
+    border-color: $accent-color;
+  }
+}
+
+@mixin arrow {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 7px;
+    height: 7px;
+    border-bottom: 2px solid $active-regular;
+    border-right: 2px solid $active-regular;
+    transform: rotate(-45deg);
+    transition: 0.2s;
+  }
+}
